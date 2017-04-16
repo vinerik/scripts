@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+  - role: common
+  - role: darwin
+    when: ansible_os_family == 'Darwin'
+    homebrew_taps:
+    - homebrew/completions
+    homebrew_packages:
+    - wget
+    homebrew_cask_packages:
+    - vmware-fusion
