@@ -1,0 +1,43 @@
+---
+- name: Ensure that homebrew is installed with the script method
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  args:
+    creates: "/usr/local/bin/brew"
+
+- name: Update Homebrew
+  homebrew:
+    update_homebrew: yes
+
+- name: Validate if Brew Cask is present
+  stat:
+    path: "/usr/local/Homebrew/Library/Homebrew/cask/cmd"
+  register: cask_installed
+
+- name: Tap the cask repository
+  homebrew_tap:
+    tap: caskroom/cask
+    state: present
+  when: cask_installed.stat.exists == false
+
+- name: Add new cask opts to common env
+  lineinfile:
+    dest: ~/.bash_profile
+    regexp: '^export HOMEBREW_CASK_OPTS'
+    line: 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"'
+    state: present
+
+- name: Tap the repositories
+  homebrew_tap:
+    tap: "{{ item }}"
+  with_items: "{{ homebrew_taps }}"
+
+- name: Install the homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ homebrew_packages }}"
+
+- name: Install the cask packages
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items: "{{ homebrew_cask_packages }}"

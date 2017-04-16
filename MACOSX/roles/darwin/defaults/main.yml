@@ -1,0 +1,12 @@
+---
+homebrew_install_dir: "/usr/local"
+homebrew_install_cask: yes
+homebrew_packages: []
+homebrew_taps: []
+homebrew_cask_packages: []
+dockapps_to_persist: []
+dockapps_to_remove: []
+dockothers_to_persist: []
+dockothers_to_remove: []
+mas_packages: []
+defaults: []

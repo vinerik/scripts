@@ -1,0 +1,6 @@
+---
+- name: Install apps from the Mac App Store
+  shell: mas list | grep -q "^{{ item.id }} " && echo "installed" || mas install {{ item.id }}
+  register: mas_installed
+  changed_when: mas_installed.stdout != "installed"
+  with_items: "{{ mas_packages }}"
