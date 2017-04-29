@@ -8,5 +8,29 @@
     - homebrew/completions
     homebrew_packages:
     - wget
+    - httpie
     homebrew_cask_packages:
     - vmware-fusion
+    - dropbox
+    - firefox
+    - google-chrome
+    - gpgtools
+    - skype
+    - teamviewer
+    - zoc
+    - Textmate
+    - devonthink-pro 
+    - freemind
+    - gns3
+    - google-earth
+    - securid
+    - unetbootin
+    - VirtualBox
+    - wireshark
+    - vagrant
+    - google-drive
+    mas_packages:
+    - name: 1Password
+      id: 443987910
+    - name: Microsoft Remote Desktop
+      id: 715768417
