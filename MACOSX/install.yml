@@ -9,6 +9,82 @@
     homebrew_packages:
     - wget
     - httpie
+    - bro
+    - byobu
+    - dos2unix
+    - exif
+    - aide
+    - aircrack-ng
+    - air spy
+    - amap
+    - apib
+    - azure-cli
+    - argus
+    - argus-clients
+    - arp-scan
+    - arp-sk
+    - arping
+    - arpoison
+    - ascii
+    - asciinema2gif
+    - atlassian-cli
+    - autobench
+    - autojump
+    - autopsy
+    - awslogs
+    - bandcamp-dl
+    - base64
+    - bind
+    - bittwist
+    - blucat
+    - bmon
+    - ccat
+    - snort
+    - pulledpork
+    - lcrack
+    - ncrack
+    - cracklib
+    - pkcrack
+    - fcrackzip
+    - ophcrack
+    - pdfcrack
+    - truecrack
+    - hydra
+    - john
+    - sshtrix
+    - john-jumbo
+    - nmap
+    - ndiff
+    - ngrep
+    - sngrep
+    - tcptrace
+    - tcptraceroute
+    - libdnet
+    - tcpreplay
+    - openssl
+    - boost
+    - tcpflow
+    - ipcalc
+    - sipcalc
+    - ipsumdump
+    - p0f
+    - libevent
+    - libnet
+    - fragroute
+    - masscan
+    - netcat
+    - netcat6
+    - socat
+    - freetype
+    - jpeg
+    - yara
+    - volatility
+    - suricata
+    - ipv6toolkit
+    - clog
+    - grc
+    - httpry
+    - ettercap
     homebrew_cask_packages:
     - vmware-fusion
     - dropbox
@@ -29,6 +105,7 @@
     - wireshark
     - vagrant
     - google-drive
+    - burp-suite
     mas_packages:
     - name: 1Password
       id: 443987910
