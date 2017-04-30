@@ -16,6 +16,7 @@
     - aide
     - base64
     - nmap
+    - mongodb
     homebrew_cask_packages:
     - vmware-fusion
     - dropbox
