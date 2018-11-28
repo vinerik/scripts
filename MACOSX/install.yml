@@ -1,0 +1,45 @@
+---
+- hosts: all
+  roles:
+  - role: common
+  - role: darwin
+    when: ansible_os_family == 'Darwin'
+    homebrew_taps:
+    - homebrew/completions
+    homebrew_packages:
+    - wget
+    - httpie
+    - bro
+    - byobu
+    - dos2unix
+    - exif
+    - aide
+    - base64
+    - nmap
+    - mongodb
+    homebrew_cask_packages:
+    - vmware-fusion
+    - dropbox
+    - firefox
+    - google-chrome
+    - gpgtools
+    - skype
+    - teamviewer
+    - zoc
+    - Textmate
+    - devonthink-pro 
+    - freemind
+    - gns3
+    - google-earth
+    - securid
+    - unetbootin
+    - VirtualBox
+    - wireshark
+    - vagrant
+    - google-drive
+    - burp-suite
+    mas_packages:
+    - name: 1Password
+      id: 443987910
+    - name: Microsoft Remote Desktop
+      id: 715768417

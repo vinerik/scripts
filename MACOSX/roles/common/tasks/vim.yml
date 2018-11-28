@@ -1,0 +1,10 @@
+- name: Checking out VIM system
+  git:
+    accept_hostkey: yes
+    repo: git@github.com:vinerik/Personal-Vim-Configs.git
+    dest: "~/.vim"
+    update: yes
+    recursive: yes
+    version: "{{ vim_system_version }}"
+  register: git_result
+changed_when: "git_result.after|default('after') != git_result.before|default('before')"
