@@ -1,8 +1,8 @@
 ###########
-# get_locked_users_from_list.ps1
-# Desc: This script will list users thar are lockedOut from a list of users
-# Arg1: userlist.txt
-# Return value : username, lockedout (True/False)
+# get_propertie_from_user_list.ps1
+# Desc: This script take alist of user and extract Active Directiry propertie
+# Arg0: userlist.txt
+# Return value : username, value of the propertie
 # Return format: CSV
 #####################
 
