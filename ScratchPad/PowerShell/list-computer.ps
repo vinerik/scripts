@@ -1,0 +1,2 @@
+# Get Computer list with Operating system in a CSV file
+Get-ADComputer -Filter * -Properties Name,OperatingSystem,OperatingSystemServicePack,OperatingSystemVersion | Export-csv -Path .\hostlist.txt
