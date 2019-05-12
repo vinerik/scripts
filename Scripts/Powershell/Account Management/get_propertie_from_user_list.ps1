@@ -1,15 +1,25 @@
 ###########
-# get_propertie_from_user_list.ps1
-# Desc: This script take alist of user and extract Active Directiry propertie
-# Arg0: userlist.txt
-# Return value : username, value of the propertie
+# get_locked_users_from_list.ps1
+# Desc: This script will list users thar are lockedOut from a list of users
+# Arg1: userlist.txt
+# Return value : username, lockedout (True/False)
 # Return format: CSV
 #####################
 
 # Get user properties 
 function GetUser_Propertie($username, $propertie1){
-    $user_info = Get-ADUser $username.trim() -Properties $propertie1
-    return $user_info
+    try {
+        $user_info = Get-ADUser $username.trim() -Properties $propertie1
+        return $user_info
+    }
+    catch {
+        $user_info = Get-ADUser $username.trim() -Properties $propertie1 -Server SERVER_IP
+        return $user_info
+    }
+    Finally {
+        $user_info = "Notfound"
+    }
+   return $user_info
 }
 
 # Main #
@@ -21,5 +31,7 @@ foreach($line in Get-Content .\userlist.txt) {
         $clean_line=$line.trim()
         # Get the properties from AD
         $propertie_value=GetUser_Propertie "$clean_line" "$propertie"
-        write-host $clean_line "," $propertie_value.$propertie
+        # Output to file
+        $clean_line,$propertie_value.$propertie -join ',' | Out-File -FilePath .\Output_$propertie  -Append
+        
 }

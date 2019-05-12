@@ -1,0 +1,12 @@
+# Basic test
+
+Parameter / Url Tampering
+- Hidden values
+- Dropdown values
+- Checkboxes
+- Radio Buttons
+- URL Parameters
+
+Look at the source code to discover parameters, then use plugin to manipulate parameters befor submitting any forms
+
+
