@@ -1,0 +1,15 @@
+# Use perl to overflow 
+./overflow $(perl -e 'print "A"x30')
+
+# Inject Hex
+perl -e 'print "\x41" x20;'
+
+# Execute shell command with perl
+$(perl -e 'print "uname";')
+
+# Hide command
+u`perl -e 'print "na";'`me
+u$(perl -e 'print "na";')me
+
+
+
