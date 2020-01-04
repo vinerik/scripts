@@ -1,0 +1,5 @@
+# Get value of a variable
+x/x &var
+
+# Get value of a variable in ASCII
+x/s &var

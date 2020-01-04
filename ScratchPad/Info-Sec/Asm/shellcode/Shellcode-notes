@@ -1,0 +1,5 @@
+# Ascii shellcode to bin file
+for i in $(ASCII CODE)
+do
+echo -en $i
+done > shellcode.bin
