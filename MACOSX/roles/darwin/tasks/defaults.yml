@@ -1,8 +1,0 @@
----
-- name: Applying defaults
-  osx_defaults:
-    domain: "{{ item['domain'] }}"
-    key: "{{ item['key'] }}"
-    type: "{{ item['type'] }}"
-    value: "{{ item['value'] }}"
-    with_items: "{{ defaults }}"
